@@ -35,7 +35,7 @@ void Sender::callCgi(EventInfo& event_info) {
 
 void Sender::_registerEvent(int to_fd, int from_fd) {
   fcntl(from_fd, F_SETFL, O_NONBLOCK);
-  EventInfo*    event_info = new EventInfo(to_fd, from_fd, _crp, _ctht);
+  EventInfo*    event_info = new EventInfo(to_fd, from_fd);
   struct kevent ev;
   EV_SET(&ev, from_fd, EVFILT_READ, EV_ADD, 0, 0, event_info);
   kevent(_kq, &ev, 1, NULL, 0, NULL);  // ERROR CHECK

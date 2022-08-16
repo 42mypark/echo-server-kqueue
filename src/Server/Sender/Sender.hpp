@@ -12,19 +12,15 @@
 #include <sstream>
 #include <vector>
 
-#include "CgiResponseParser.hpp"
-#include "CgiToHttpTransformer.hpp"
 #include "EventInfo.hpp"
 
 class Sender {
  private:
-  int                   _kq;
-  CgiResponseParser*    _crp;
-  CgiToHttpTransformer* _ctht;
+  int _kq;
 
   // Constructor
  public:
-  Sender(int kq, CgiResponseParser* crp, CgiToHttpTransformer* ctht) : _kq(kq), _crp(crp), _ctht(ctht) {}
+  Sender(int kq) : _kq(kq) {}
 
   // Method
  private:

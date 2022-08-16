@@ -13,21 +13,17 @@
 #include <vector>
 
 #include "EventInfo.hpp"
-#include "HttpRequestParser.hpp"
-#include "HttpResponseGenerator.hpp"
 #include "macro.hpp"
 
 class Receiver {
  private:
-  int                    _kq;
-  int                    _listen_fd;
-  HttpRequestParser*     _hrp;
-  HttpResponseGenerator* _hrg;
-  timespec               _wait;
+  int      _kq;
+  int      _listen_fd;
+  timespec _wait;
 
   // Constructor
  public:
-  Receiver(int kq, int listen_fd, HttpRequestParser* hrp, HttpResponseGenerator* hrg);
+  Receiver(int kq, int listen_fd);
 
   // Method
  private:
