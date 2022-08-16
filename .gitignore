@@ -1,0 +1,5 @@
+*.o
+.vscode/*.json
+server.out
+client.out
+obj/
